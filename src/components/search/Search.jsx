@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import "./search.css";
 import { GET_CITIES } from "../../api";
@@ -35,16 +35,64 @@ export default function Search({ OnSeachChange }) {
     OnSeachChange(searchData);
   };
 
+ 
+//   console.log(test);
+
+  const [wish, setWish] = useState('');
+  const hour = new Date().getHours();
+
+  useEffect(()=>{
+    if(hour > 3 && hour < 12){
+        setWish('Good Morning');
+    }else if (hour >= 12 && hour < 18){
+        setWish('Good Afternoon');
+    }else{
+        setWish('Good Evening');
+    }
+  },[hour]);
+
   return (
-    <div className="search">
+    <div className="search-container">
+        <div className="search-wrapper">
+        <div className="wishing-hero">
+            <img className="wishing-photo" src="https://cdn.dribbble.com/users/1008875/screenshots/5300828/media/f74758f97034b5214a078bd47292275b.png?compress=1&resize=1600x1200&vertical=top"/>
+            <div className="wish-txt">
+                <p className="wish-txt-i">Hello,</p>
+                <p className="wish-txt-ii">{wish}.</p>
+            </div>
+        </div>
       {/* this component is the search bar with auto-complete features */}
       <AsyncPaginate
+      styles={{
+        container : (baseStyles) =>({
+            ...baseStyles,
+            minWidth: '300px',
+        }),
+        control : (baseStyles) =>({
+            ...baseStyles,
+            borderRadius: '20px',
+            padding: '3px 5px',
+            backgroundColor: '#EFEFEF'
+        }),
+        option : (baseStyles) => ({
+            ...baseStyles,
+            fontWeight: '500',
+            fontSize: '15px'
+        }),
+        placeholder : (baseStyles) =>({
+            ...baseStyles,
+            fontSize: '13px',
+            color: 'black',
+        }),
+      }}
+      className="smart-search"
         placeholder="search by cities..."
         debounceTimeout={600}
         value={searchValue} //we are setting the value inside the input
         onChange={handleSearch} //listening to any change of value made inside the input by user
         loadOptions={loadOptions} //will make the async request to the server for every prefix as we are typing
       />
+      </div>
     </div>
   );
 }

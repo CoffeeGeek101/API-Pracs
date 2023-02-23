@@ -1,5 +1,38 @@
-.search{
-   max-width: 500px;
-   margin: 20px auto;
-   padding: 20px;
+.search-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    /* background-color: blueviolet; */
+    padding: 10px 20px;
+}
+
+
+.wishing-hero{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wishing-photo{
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.wish-txt{
+    display: flex;
+    flex-direction: column;
+}
+
+.wish-txt-i{
+    margin: 0;
+    font-size: 20px;
+}
+
+.wish-txt-ii{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
 }

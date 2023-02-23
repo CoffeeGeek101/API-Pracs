@@ -1,0 +1,164 @@
+
+.weather-container{
+    /* transition: 1s; */
+    margin: 20px auto;
+    display: flex;
+    padding: 30px 50px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.weather-wrapper{
+    transition: 1s ease;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+    /* box-shadow: 1px 1px 15px -2px rgba(0, 0, 0, 0.571); */
+}
+
+.air-wrapper{
+    transition: 1s ease;
+    background-image: url(https://i.pinimg.com/474x/a8/aa/df/a8aadfec6bd73346db1127671cd8a430.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    /* box-shadow: 1px 1px 15px -2px rgba(0, 0, 0, 0.493); */
+    max-width: 347px;
+}
+
+.weather-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px 35px;
+    gap: 40px;
+    max-width: 350px;
+    min-height: 290px;
+    overflow: hidden;
+    border-radius: 25px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
+}
+
+.weather-head{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.weather-logo{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 100%;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.458);
+}
+
+.weather-head-des{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.head-des-title{
+    margin: 0;
+    font-weight: 700;
+    color: #fff;
+}
+.head-des-content{
+    margin: 0;
+    font-weight: 400;
+    font-size: 11px;
+    max-width: 150px;
+}
+
+.weather-main{
+    display: flex;
+    flex-direction: column;
+}
+.weather{
+    font-size: 50px;
+    margin: 0;
+    font-weight: 600;
+}
+.weather-name{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.weather-details{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.weather-detail-ele{
+    /* border: solid 1px; */
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 18px;
+    min-width: 60px;
+    box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.666);
+}
+
+
+.feelslike{
+    background-color: black;
+    color: #fff;
+}
+
+.pressure{
+    background-color: rgba(202, 255, 123, 0.838);
+}
+
+.humidity{
+    background-color: bisque;
+}
+
+.weather-detail-ele > p{
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.detail-label{
+    font-weight: 400;
+    font-size: 11px;
+}
+
+
+.air-wrapper{
+    flex: 1;
+}
+
+.air{
+    color: #fff;
+}
+
+.air-name{
+    color: #fff;
+}
+
+.air-content{
+    color: #fff;
+}
+
+.night-text{
+    color: #fff;
+}
+
+.air > span{
+    font-size: 10px;
+    font-weight: 200;
+}
+.aqi-holder{
+    display: flex;
+    gap: 10px;
+}
+
+.aqi-tag{
+    font-weight: 500;
+}
