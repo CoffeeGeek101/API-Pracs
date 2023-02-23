@@ -1,9 +1,17 @@
 .App{
-    width: 1080px;
-    margin: 20px auto;
-    background-color: aqua;
+    margin: 60px auto;
+    display: flex;
+
 }
 
 *{
-    font-family: system-ui;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home{
+    flex: 4;
+}
+
+.sidehome{
+    flex: 2;
 }
