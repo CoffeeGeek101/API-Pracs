@@ -18,7 +18,8 @@ function App() {
     const weatherReq = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
     const forecastReq = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
     const airPollutionReq = fetch(`${WEATHER_API_URL}/air_pollution?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
-
+  
+// api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid={API key}
     Promise.all([weatherReq, forecastReq, airPollutionReq])
     .then( async(res)=>{
       const weatherRes = await res[0].json();
@@ -42,8 +43,13 @@ function App() {
      <Home 
      weather={weather} 
      pollution={airPollution}
-     mainSeach={handleHomeSearch}/>
-     <SideHome/>
+     forecast ={forecast}
+     mainSeach={handleHomeSearch}
+     />
+     <SideHome 
+     weather={weather} 
+     forecast ={forecast}
+     />
     </div>
   )
 }

@@ -1,0 +1,64 @@
+.forecast-container{
+    padding: 0 40px;
+    margin-top: 0;
+}
+
+.forecast-wrapper{
+    /* width: 100%; */
+    
+    padding: 2px 30px;
+    /* border:solid 1px; */
+    border-radius: 17px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.113);
+    /* background-color: #eaeaea; */
+    background-color: rgba(186, 196, 255, 0.31);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.forecast-title{
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 0;
+    color: rgb(44, 44, 44);
+    /* padding-top: 10px; */
+}
+
+.forecast-card-holder{
+    display: flex;
+    padding: 20px 0;
+    gap: 15px;
+}
+
+
+.forecast-card{
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    /* border: solid 1px; */
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 1px 0px 8px -3px rgba(0, 0, 0, 0.205);
+}
+
+.timeOfDay, .temperature,.weather-name{
+    margin: 0;
+    font-size: 15px;
+}
+
+.timeOfDay{
+    font-weight: 500;
+}
+
+.weather-sign{
+    width: 40px;
+}
+
+.forecast-detail{
+    text-align: center;
+}
+

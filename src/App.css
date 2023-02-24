@@ -6,12 +6,16 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
 .home{
-    flex: 4;
+    flex: 6;
 }
 
 .sidehome{
-    flex: 2;
+    flex: 4;
+    /* border-left: solid 1px; */
+    background-color:whitesmoke;
+    border-radius: 40px 0 0 10px;
 }

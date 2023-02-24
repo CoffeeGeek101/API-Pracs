@@ -1,7 +1,13 @@
 import React from 'react'
 import './App.css'
-export default function SideHome() {
+import Report from './components/report/Report'
+export default function SideHome({weather,forecast}) {
   return (
-    <div className='sidehome'>SideHome</div>
+    <div className='sidehome'>
+      {weather && <Report 
+      weatherData={weather}
+      forecastData={forecast}
+      />}
+    </div>
   )
 }

@@ -108,11 +108,34 @@ export default function Weather({weatherData, airPollution}) {
                 </div>
                 <div className='weather-detail-ele humidity'>
                     <p className='detail-label'>WindSpeed</p>
-                    <p>{weatherData.wind.speed}km/h</p>
+                    <p>{weatherData.wind.speed}m/s</p>
                 </div>
             </div>
             </div>
         </div>
+        <div className='widget'>
+            <div className='widget-content'> 
+                <div className='widget-ele'>
+                    <p className='widget-label'>VISIBILITY</p>
+                    <p className='widget-value'>{weatherData.visibility}m</p>
+                </div>
+                <div className='widget-ele'>
+                    <p className='widget-label'>WIND SPEED</p>
+                    <p className='widget-value'>{weatherData.wind.speed}km/h</p>
+                </div>
+                <div className= 'temp-ele'>
+                    <div className='maxminTemp'>
+                        <p className='widget-label'>max temp.</p>
+                        <p className='widget-value'>{Math.floor(weatherData.main.temp_max)}℃</p>
+                    </div>
+                    <div className='maxminTemp'>
+                        <p className='widget-label'>min tmep.</p>
+                        <p className='widget-value'>{Math.floor(weatherData.main.temp_min)}℃</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
   )
 }
