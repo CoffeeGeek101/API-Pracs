@@ -129,7 +129,7 @@ export default function Weather({weatherData, airPollution}) {
                         <p className='widget-value'>{Math.floor(weatherData.main.temp_max)}℃</p>
                     </div>
                     <div className='maxminTemp'>
-                        <p className='widget-label'>min tmep.</p>
+                        <p className='widget-label'>min temp.</p>
                         <p className='widget-value'>{Math.floor(weatherData.main.temp_min)}℃</p>
                     </div>
                 </div>
