@@ -40,7 +40,7 @@ export default function Search({ OnSeachChange }) {
 
   const [wish, setWish] = useState('');
   const hour = new Date().getHours();
-
+//  console.log(hour)
   useEffect(()=>{
     if(hour > 3 && hour < 12){
         setWish('Good Morning');
@@ -50,6 +50,7 @@ export default function Search({ OnSeachChange }) {
         setWish('Good Evening');
     }
   },[hour]);
+
 
   return (
     <div className="search-container">
@@ -66,7 +67,7 @@ export default function Search({ OnSeachChange }) {
       styles={{
         container : (baseStyles) =>({
             ...baseStyles,
-            minWidth: '300px',
+            minWidth: '400px',
         }),
         control : (baseStyles) =>({
             ...baseStyles,

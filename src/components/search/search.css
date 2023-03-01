@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 1045px;
     /* background-color: blueviolet; */
-    padding: 10px 20px;
+    padding: 10px 40px;
 }
 
 
@@ -35,4 +35,5 @@
     margin: 0;
     font-size: 30px;
     font-weight: 700;
+    color: rgb(36, 36, 36);
 }
