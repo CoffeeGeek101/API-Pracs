@@ -3,6 +3,7 @@ import Search from './components/search/Search'
 import './App.css'
 import Weather from './components/weather/Weather';
 import Forecast from './components/forecast/Forecast';
+import Idle from './components/idle/Idle';
 
 export default function ({mainSeach, weather, pollution,forecast}) {
 
@@ -18,10 +19,10 @@ export default function ({mainSeach, weather, pollution,forecast}) {
   return (
     <div className='home'>
         <Search  OnSeachChange={handleOnSeachChange}/>
-        { weather && <Weather 
+        { weather ? <Weather 
         weatherData={weather}
-        airPollution={pollution}
-        />}
+        airPollution={pollution} 
+        /> : <Idle/>}
         {forecast && <Forecast curForcast={forecast}/>}
     </div>
   )

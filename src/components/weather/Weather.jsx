@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './weather.css'
+import {motion} from 'framer-motion'
+
 // import '../../../public/assets/04d.jpeg'
 export default function Weather({weatherData, airPollution}) {
     // console.log(weatherData.city);   
@@ -51,8 +53,13 @@ export default function Weather({weatherData, airPollution}) {
     console.log(aqi);
 
   return (
-    <div className='weather-container'>
-        <div className='weather-wrapper' style={divStyle}>
+    <motion.div
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    transition={{duration:0.2, ease:"easeIn"}}
+    className='weather-container'>
+        <motion.div 
+        className='weather-wrapper' style={divStyle}>
             <div className='weather-content'> 
             <div className='weather-head'>
                 <video className='weather-logo' src='https://cdn.dribbble.com/userupload/2609068/file/original-30c213cf4aaccbf4bc838938ec10ea3b.mp4' playsInline autoPlay="autoplay" loop={true}></video>
@@ -80,8 +87,9 @@ export default function Weather({weatherData, airPollution}) {
                 </div>
             </div>
             </div>
-        </div>
-        <div className='air-wrapper'>
+        </motion.div>
+        <motion.div 
+        className='air-wrapper'>
         <div className='weather-content'> 
             <div className='weather-head'>
                 <video className='weather-logo' src='https://cdn.dribbble.com/userupload/2609068/file/original-30c213cf4aaccbf4bc838938ec10ea3b.mp4' playsInline autoPlay="autoplay" loop={true}></video>
@@ -112,8 +120,12 @@ export default function Weather({weatherData, airPollution}) {
                 </div>
             </div>
             </div>
-        </div>
-        <div className='widget'>
+        </motion.div>
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{ delay:0.2}}
+        className='widget'>
             <div className='widget-content'> 
                 <div className='widget-ele'>
                     <p className='widget-label'>VISIBILITY</p>
@@ -129,13 +141,13 @@ export default function Weather({weatherData, airPollution}) {
                         <p className='widget-value'>{Math.floor(weatherData.main.temp_max)}℃</p>
                     </div>
                     <div className='maxminTemp'>
-                        <p className='widget-label'>min tmep.</p>
+                        <p className='widget-label'>min temp.</p>
                         <p className='widget-value'>{Math.floor(weatherData.main.temp_min)}℃</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
 
-    </div>
+    </motion.div>
   )
 }

@@ -1,11 +1,16 @@
 import React from 'react'
 import './forecast.css'
+import {motion} from 'framer-motion'
 export default function Forecast({curForcast}) {
     // console.log(curForcast.list.slice(0,8).map((hourlyForecast)=>{
     //    return hourlyForecast.dt_txt.slice(11,16);
     // }));
   return (
-    <div className='forecast-container'>
+    <motion.div 
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    transition={{delay:0.5, ease:"easeInOut"}}
+    className='forecast-container'>
         <div className='forecast-wrapper'>
             <p className='forecast-title'>Temperature.</p>
             <div className='forecast-card-holder'>
@@ -22,6 +27,6 @@ export default function Forecast({curForcast}) {
             }
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
