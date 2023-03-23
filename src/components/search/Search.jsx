@@ -3,6 +3,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import "./search.css";
 import { GET_CITIES } from "../../api";
 import { getGeoCities } from "../../api";  
+import {motion} from 'framer-motion';
 
 export default function Search({ OnSeachChange }) {
   const [searchValue, setSearchValue] = useState(null);
@@ -59,7 +60,11 @@ export default function Search({ OnSeachChange }) {
             <img className="wishing-photo" src="https://cdn.dribbble.com/users/1008875/screenshots/5300828/media/f74758f97034b5214a078bd47292275b.png?compress=1&resize=1600x1200&vertical=top"/>
             <div className="wish-txt">
                 <p className="wish-txt-i">Hello,</p>
-                <p className="wish-txt-ii">{wish}.</p>
+                <motion.p 
+                initial={{opacity: 0, y: -100}}
+                animate={{opacity:1, y:0}}
+                transition={{type:"spring", delay:0.5}}
+                className="wish-txt-ii">{wish}.</motion.p>
             </div>
         </div>
       {/* this component is the search bar with auto-complete features */}

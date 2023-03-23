@@ -2,6 +2,7 @@ import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 import { Line, LineChart, Tooltip, XAxis } from "recharts";
 import "./report.css";
+import {motion} from 'framer-motion';
 
 export const CustomTooltip = ({ active, payload,label }) => {
   if (active && payload) {
@@ -155,15 +156,23 @@ export default function Report({ weatherData, forecastData }) {
   }, [monthname_two]);
 
   return (
-    <div className="general-report-conatianer">
+    <motion.div
+    initial={{opacity:0, x:200}}
+    animate={{opacity:1,x:0}}
+    transition={{delay:0.3,type:"linear"}}
+    className="general-report-conatianer">
       <div className="general-report-wrapper">
-        <div className="widget-header-container">
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{delay:1,type:"linear"}}
+        className="widget-header-container">
           <div className="location-details">
             <p className="location-value">{weatherData.city}.</p>
             <p className="location-weather">{weatherData.name}</p>
           </div>
           <p className="location-temp">{Math.floor(weatherData.main.temp)}°c</p>
-        </div>
+        </motion.div>
         <LineChart
           className="chart"
           width={330}
@@ -193,7 +202,11 @@ export default function Report({ weatherData, forecastData }) {
           />
         </LineChart>
         <p className="chart-label">Temperature for next 24hrs in ℃</p>
-        <div className="sun-stat">
+        <motion.div
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{delay:0.6,type:"linear"}}
+        className="sun-stat">
           <div className="sun-stat-ele">
             <h4>Sunrise Time</h4>
             <p>{sunriseTime}</p>
@@ -202,11 +215,15 @@ export default function Report({ weatherData, forecastData }) {
             <h4>Sunset Time</h4>
             <p>{sunsetTime}</p>
           </div>
-        </div>
+        </motion.div>
         <div className="forecast-next-day">
           <p className="prediction-title">Weather Forecast.</p>
           <div className="prediction">
-            <div className="prediction-ele">
+            <motion.div 
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:0.8,type:"linear"}}
+            className="prediction-ele">
               <p className="predict-day">
                 {monthname} {`${forecastData.list[9].dt_txt.slice(8, 10)}`}
               </p>
@@ -214,8 +231,12 @@ export default function Report({ weatherData, forecastData }) {
                 <p className="predict-weather">{`${forecastData.list[9].weather[0].main}`}</p>
                 <p>{`${Math.floor(forecastData.list[9].main.temp_max)}`}/{`${Math.floor(forecastData.list[9].main.temp_min)}`}</p>
               </div>
-            </div>
-            <div className="prediction-ele">
+            </motion.div>
+            <motion.div 
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:1,type:"linear"}}
+            className="prediction-ele">
               <p className="predict-day">
                 {monthname_two} {`${forecastData.list[18].dt_txt.slice(8, 10)}`}
               </p>
@@ -223,10 +244,10 @@ export default function Report({ weatherData, forecastData }) {
                 <p className="predict-weather">{`${forecastData.list[18].weather[0].main}`}</p>
                 <p>{`${Math.floor(forecastData.list[18].main.temp_max)}`}/{`${Math.floor(forecastData.list[18].main.temp_min)}`}</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
